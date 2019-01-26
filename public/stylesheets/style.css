@@ -1,0 +1,62 @@
+* {
+  font-family: 'Fjalla One', sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.line {
+  line-height: 1.5em;
+  height: 1.5em;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.line-seperator {
+  line-height: 0.7em;
+  height: 0.7em;
+}
+
+.line-section-title {
+  line-height: 1.2em;
+  height: 1.2em;
+  opacity: 0.5;
+  margin-top: 1em;
+  margin-bottom: 0.2em;
+  padding-bottom: 0.1em;
+  padding-left: 0.2em;
+  font-size: 1.5em;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 0.5em;
+}
+
+.section-container .line-article:nth-last-child(5n) {
+  margin-top: 1em;
+}
+
+.line-article {
+  transition: opacity 300ms;
+  opacity: 0.5;
+}
+
+.line-article:hover {
+  opacity: 1;
+}
+
+.article-time {
+  opacity: 0.7;
+  font-size: 0.7em;
+  vertical-align: middle;
+}
+
+.article-title {
+  padding: 0.5em;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.article-content {
+  opacity: 0.5;
+}

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  for sxn in sections
+    div(class='section-container')
+      div(class='line line-section-title')= sxn.title
+      for art in sxn.articles
+        div(class='line line-article' title=art.feedName)
+          span(class='article-time')= art.pubdate.format('HHmm')
+          a(class='article-title' target='_blank' href=art.link)= art.title
+          span(class='article-content')= art.content
