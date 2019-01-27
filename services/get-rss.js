@@ -73,8 +73,8 @@ function processResult(url, result) {
                 };
             });
         }
-    } catch {
-        console.error('failed processing data from ' + url, result);
+    } catch (e) {
+        console.error('failed processing data from ' + url, result, e);
     } finally {
         console.log('finished processing data from ' + url);
     }
@@ -83,8 +83,8 @@ function processResult(url, result) {
 (function scan() {
     feedUrls.forEach(u => {
         console.log('checking ' + u);
-        try {
-            (u.startsWith('https') ? https : http).get(u, function (res) {
+        (u.startsWith('https') ? https : http).get(u, function (res) {
+            try {
                 var data = '';
                 if (res.statusCode >= 200 && res.statusCode < 400) {
                     res.on('data', function (d) {
@@ -98,10 +98,10 @@ function processResult(url, result) {
                         });
                     });
                 }
-            });
-        } catch {
-            console.warn('error checking ' + u);
-        }
+            } catch (e) {
+                console.warn('error checking ' + u, e);
+            }
+        });
     });
 
 
