@@ -1,9 +1,9 @@
-* {
-  font-family: 'Fjalla One', sans-serif;
+body {
+  overflow-x: hidden;
 }
 
-a {
-  color: #00B7FF;
+* {
+  font-family: 'Fjalla One', sans-serif;
 }
 
 .line {
