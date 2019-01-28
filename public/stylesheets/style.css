@@ -32,7 +32,7 @@ body {
 }
 
 .section-container .line-article:nth-last-child(5n) {
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 .line-article {
