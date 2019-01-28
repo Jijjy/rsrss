@@ -7,7 +7,7 @@ var router = express.Router();
 function dateKey(m) {
   let now = moment();
   let daydiff = moment().startOf('day').diff(moment(m).startOf('day'), 'days');
-  if (daydiff >= 7) return now.month() !== m.month() ? m.format('Do MMM') : m.format('Do');
+  if (daydiff >= 7) return now.month() !== m.month() ? m.format('Do [of] MMMM') : m.format('dddd [the] Do');
   if (daydiff > 1) return m.format('dddd');
   if (daydiff === 1) return m.hours() >= 23 ? 'Last Night' : 'Yesterday';
   if (m.hours() >= 18)
