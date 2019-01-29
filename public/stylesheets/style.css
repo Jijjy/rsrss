@@ -5,6 +5,7 @@ body {
 
 * {
     font-family: 'Fjalla One', sans-serif;
+    overflow-x: hidden;
 }
 
 .line {
