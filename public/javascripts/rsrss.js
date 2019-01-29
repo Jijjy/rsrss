@@ -5,3 +5,5 @@ function getHostname(url) {
 function getRootDomain(url) {
     return getHostname(url).split('.').filter(x => x.length > 2).join('.');
 }
+
+setTimeout(() => location.reload(), 15000);

@@ -5,7 +5,8 @@ block content
     div(class='section-container')
       div(class='line line-section-title')= sxn.title
       for art in sxn.articles
-        div(class='line line-article' title=art.feedName)
+        - let freshness = 1 / Math.sqrt( Math.max(-art.pubdate.diff(new Date(), 'minutes') - 30, 1) );
+        div(class='line line-article' style=('border-left:3px solid rgba(255,128,0,' + freshness + ')') title=art.feedName)
           span(class='article-time')= art.pubdate.format('HHmm')
           a(class='article-title' target='_blank' href=art.link)= art.title
           span(class='article-content')= art.content
