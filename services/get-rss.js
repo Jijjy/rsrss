@@ -5,7 +5,7 @@ const h2p = require('html2plaintext')
 var parser = new xml2js.Parser();
 
 const oneMinute = 60000;
-const updateInterval = 15 * oneMinute;
+const updateInterval = 10 * oneMinute;
 const maxArticleCount = 500;
 
 const feedUrls = [
@@ -81,6 +81,7 @@ function processResult(url, result) {
 }
 
 (function scan() {
+    cull();
     feedUrls.forEach(u => {
         console.log('checking ' + u);
         (u.startsWith('https') ? https : http).get(u, function (res) {
@@ -94,7 +95,6 @@ function processResult(url, result) {
                         console.log('parsing data from ' + u);
                         parser.parseString(data, function (err, result) {
                             processResult(u, result);
-                            cull();
                         });
                     });
                 }

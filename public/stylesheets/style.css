@@ -38,12 +38,14 @@ body {
 }
 
 .line-article {
-    transition: color 300ms;
     padding-left: 0.5em;
 }
 
+.line-article > * {
+    transition: color 300ms;
+}
+
 .line-article:hover, .line-article:hover .article-title {
-    opacity: 1;
     color:rgba(255,128,0,1);
 }
 
